@@ -1,4 +1,4 @@
-import nodeResolve from "@rollup/plugin-node-resolve"
+import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import typescript from "rollup-plugin-typescript2"
 import postcss from "rollup-plugin-postcss"
@@ -11,18 +11,33 @@ const allExportsAsDefault = () => ({
     }
 })
 
+
+const packageJson = require("./package.json");
+
 /**
  * @type {import('rollup').RollupOptions}
  */
 const config = {
     input: './src/components/index.ts',
-    output: {
-        file: 'dist/index.js',
-        format: 'esm',
-    },
+    // output: {
+    //     file: 'dist/index.js',
+    //     format: 'esm',
+    // },
+    output: [
+        {
+          file: packageJson.main,
+          format: "cjs",
+          sourcemap: true
+        },
+        {
+          file: packageJson.module,
+          format: "esm",
+          sourcemap: true
+        }
+      ],
     plugins: [
         // order of plugins is important!
-        nodeResolve(),
+        resolve(),
         commonjs({
             include: 'node_modules/**'
         }),
