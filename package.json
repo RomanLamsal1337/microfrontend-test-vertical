@@ -2,8 +2,8 @@
   "name": "@aclue-de/microfrontend-test-vertical",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.d.js",
+  "module": "dist/index.js",
   "files": [
     "dist",
     "README.md"

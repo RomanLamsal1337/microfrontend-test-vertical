@@ -11,30 +11,15 @@ const allExportsAsDefault = () => ({
     }
 })
 
-
-const packageJson = require("./package.json");
-
 /**
  * @type {import('rollup').RollupOptions}
  */
 const config = {
     input: './src/components/index.ts',
-    // output: {
-    //     file: 'dist/index.js',
-    //     format: 'esm',
-    // },
-    output: [
-        {
-          file: packageJson.main,
-          format: "cjs",
-          sourcemap: true
-        },
-        {
-          file: packageJson.module,
-          format: "esm",
-          sourcemap: true
-        }
-      ],
+    output: {
+        file: 'dist/index.js',
+        format: 'esm',
+    },
     plugins: [
         // order of plugins is important!
         resolve(),
