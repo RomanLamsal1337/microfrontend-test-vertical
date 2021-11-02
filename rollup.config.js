@@ -1,7 +1,7 @@
 import nodeResolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import typescript from "rollup-plugin-typescript2"
-import css from "rollup-plugin-import-css"
+import postcss from "rollup-plugin-postcss"
 import babel from "@rollup/plugin-babel"
 
 const allExportsAsDefault = () => ({
@@ -27,10 +27,12 @@ const config = {
             include: 'node_modules/**'
         }),
         typescript({ useTsconfigDeclarationDir: true }),
-        css(),
+        postcss({
+            extensions: [ '.css' ],
+        }),
         babel({
             babelHelpers: 'bundled',
-            extensions: ['.ts', '.tsx', '.mjs', '.js', '.css'],
+            extensions: ['.ts', '.tsx', '.mjs', '.js'],
         }),
         allExportsAsDefault()
     ],
