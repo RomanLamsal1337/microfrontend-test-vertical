@@ -47,7 +47,7 @@ jobs:
         with:
           file: ./package.json
           field: main
-          value: build/index.js
+          value: dist/test-vertical.js
 
       - name: Set version
         run: yarn version --no-git-tag-version --new-version ${{ steps.generate_version.outputs.version }}
