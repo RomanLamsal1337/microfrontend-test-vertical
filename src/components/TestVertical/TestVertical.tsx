@@ -1,7 +1,7 @@
 import React from 'react';
 import './TestVertical.css';
 
-const TestVertical = () => {
+const TestVertical: React.FC = () => {
   return (
     <div className="App">
       Hello Workshop
