@@ -2,8 +2,8 @@
   "name": "@aclue-de/microfrontend-test-vertical",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/test-vertical.js",
-  "module": "dist/test-vertical.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [ "dist", "README.md" ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

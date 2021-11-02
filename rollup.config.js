@@ -17,7 +17,7 @@ const allExportsAsDefault = () => ({
 const config = {
     input: './src/components/index.ts',
     output: {
-        file: 'dist/test-vertical.js',
+        file: 'dist/index.js',
         format: 'esm',
     },
     plugins: [
